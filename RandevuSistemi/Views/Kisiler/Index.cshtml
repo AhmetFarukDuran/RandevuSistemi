@@ -1,0 +1,38 @@
+﻿@using RandevuSistemi.Models
+@model List<Kisiler>
+@{
+    ViewBag.Title = "Home Page";
+}
+
+    <h3>Kişiler Listesi</h3>
+
+    <table id="tbl1" class="table table-bordered ">
+        <thead>
+            <tr>
+                <th>Kişi Ad</th>
+                <th>Kişi Soyad</th>
+                <th>Kişi Police No</th>
+                <th>Kişi TcNo</th>
+                <th>Kişi Tel</th>
+                <th>Kişi Il</th>
+                <th>Kişi Ilce</th>
+
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var x in Model)
+            {
+                <tr>
+                    <td>@x.KisiAd</td>
+                    <td>@x.KisiSoyad</td>
+                    <td>@x.PoliceNo</td>
+                    <td>@x.TcNo</td>
+                    <td>@x.Tel</td>
+                    <td>@x.Il</td>
+                    <td>@x.Ilce</td>
+                </tr>
+        }
+            </tbody>
+        </table>
+<a href="/Kisiler/KisiEkle" class="btn btn-success" style="float; left; margin:1px">Ekle</a>
+<a href="/Home/Index" class="btn btn-success" style="float; left; margin:1px">Randevulara Git</a>

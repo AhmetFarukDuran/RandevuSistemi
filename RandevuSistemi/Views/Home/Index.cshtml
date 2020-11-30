@@ -1,0 +1,53 @@
+﻿@using RandevuSistemi.Models
+@model List<Randevu>
+@{
+    ViewBag.Title = "Home Page";
+}
+
+
+@*Onaylı Randevuların Listelendiği Yer*@
+    <h3>Onaylı Randevular</h3>
+
+<table id="tbl1" class="table table-bordered ">
+    <thead>
+        <tr>
+            <th>Randevu ID</th>
+            <th>Kişi Ad</th>
+            <th>Kişi Soyad</th>
+            <th>Randevu Tarih</th>
+
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var x in Model)
+        {
+            <tr>
+                <td>@x.RandevuId</td>
+                <td>@x.Kisiler.KisiAd</td>
+                <td>@x.Kisiler.KisiSoyad</td>
+                <td>@x.Tarih</td>
+            </tr>
+
+        }
+    </tbody>
+</table>
+<a href="/Randevu/RandevuAl" class="btn btn-success" style="float; left; margin:1px">Randevu Ekle</a>
+<a href="/Kisiler/KisiEkle" class="btn btn-success" style="float; left; margin:1px">Kişi Ekle</a>
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+
+<link href="~/Content/bootstrap.css" rel="stylesheet" />
+
+<link href="https://cdn.datatables.net/1.10.15/css/dataTables.bootstrap.min.css
+" rel="stylesheet" />
+<link href="https://cdn.datatables.net/responsive/2.1.1/css/responsive.bootstrap.min.css
+" rel="stylesheet" />
+<script src="https://cdn.datatables.net/1.10.15/js/jquery.dataTables.min.js"></script>
+
+<script src="https://cdn.datatables.net/1.10.15/js/dataTables.bootstrap4.min.js
+ "></script>
+
+
+<script>
+    $('#tbl1').dataTable();
+</script>
